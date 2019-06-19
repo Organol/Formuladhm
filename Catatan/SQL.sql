@@ -11,8 +11,8 @@ dikali dengan harga saham;
 Table Neraca(
 	Pk Neraca;
 	FK Kode;
-	Aset;
-	Liabilitas;
+	Aset int ;
+	Liabilitas int;
 	Modal/Ekuitas;
 	Satuan; Enum (Penuh, Jutaan, Ribuan, Jutaan, Miliaran)
 	Mata Uang; Enum (USD, Dollar);
