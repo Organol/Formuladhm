@@ -71,7 +71,8 @@
 <body>
   <nav class="navbar navbar-expand-md">
     <div>
-      <button><a href="#"><i class="fas fa-plus"></i> Input Data</a></button>
+      <button>
+        <a href="<?php echo base_url("index.php/admin/Dashbord/inputData");?>"><i class="fas fa-plus"></i> Input Data</a></button>
     </div>
   </nav>
   <hr>
