@@ -52,7 +52,7 @@
   .navbar {
     margin-left: 180px; /* Same as the width of the sidenav */
     padding: 0px 10px;
-    height: 30px;
+    height: 50px;
     background: white;
   }
 
@@ -70,6 +70,9 @@
 </head>
 <body>
   <nav class="navbar navbar-expand-md">
+    <div>
+      <button><a href="#"><i class="fas fa-plus"></i> Input Data</a></button>
+    </div>
   </nav>
   <hr>
 </body>
