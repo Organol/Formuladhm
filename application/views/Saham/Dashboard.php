@@ -152,7 +152,7 @@
  </div>
 
  <div class="container content"">
-  <h4 style="padding-top: 12px;">Hari Ini</h4>
+  <h4 style="padding-top: 12px;"></h4>
   <div class="row" style="padding-bottom: 20px;">
     <div class="col-sm-6" style="background-color:white; ">
       <div style="width: 500px;margin: 0px auto;">
@@ -170,7 +170,7 @@
 </div>
 
 <div class="container content"">
-  <h4 style="padding-top: 12px;">Hari Ini</h4>
+  <h4 style="padding-top: 12px;"></h4>
   <div class="row" style="padding-bottom: 20px;">
     <div class="col-sm-6" style="background-color:white; ">
       <div style="width: 500px;margin: 0px auto;">
