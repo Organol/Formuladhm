@@ -89,9 +89,9 @@
   <div class="logo" style="padding: 10px 10px 6px 16px;">
    <h2>SAHAM</h2>
  </div>
- <a href="<?php echo site_url('Dashboard/DataEmiten')?>"><i class="fas fa-archive"></i>  Data Emiten</a>
+ <a href="#"><i class="fas fa-archive"></i>  Data Emiten</a>
  <a href="#"><i class="fas fa-plus"></i>  Input Data</a>
- <a href="<?php echo site_url('Dashboard/DetailEmiten')?>"><i class="fas fa-plus"></i> Detail Emiten</a>
+ <a href="#"><i class="fas fa-plus"></i> Detail Emiten</a>
 </div>
 
 <!-- Main section -->
@@ -104,9 +104,9 @@
 </style>
 <div class="main">
   <div class="col-lg-12">
-    <div class="row" style="height: 60px; padding-bottom: 5px; margin-top: 5px;">
+    <div class="row" style="height: 60px; padding-bottom: 5px; margin-top: 4px;">
       <div class="col" style=" padding-left: 12px;">
-        <a href="<?php echo site_url('Dashboard/InputDataForm')?>">
+        <a href="#">
           <button  type="button" id="btnAddEmiten" class="btn btn-info btn-sm">Add Data Emiten</button></a>
         </div>
         <br>
