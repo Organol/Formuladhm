@@ -8,10 +8,11 @@
   <link rel="stylesheet" href="style.css">
   <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-
   <script src="assets/chart/Chart.js"></script>
-  
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css">
+
+
   <style>
   body{
     background: #f7f6f3;
@@ -110,7 +111,7 @@
       </div>
       <div class="col" style="background-color:white; padding-left: 12px;">
         <a href="http://localhost/Formulashm/index.php/Dashboard/InputDataForm">
-          <button  type="button" id="addDataButton" class="btn btn-info">Add Data Emiten</button></a>
+          <button  type="button" id="addDataButton" class="btn btn-info btn-sm">Add Data Emiten</button></a>
         </div>
         <br>
       </div>
@@ -172,16 +173,24 @@
 <div class="container content"">
   <h4 style="padding-top: 12px;"></h4>
   <div class="row" style="padding-bottom: 20px;">
-    <div class="col-sm-6" style="background-color:white; ">
-      <div style="width: 500px;margin: 0px auto;">
-        <P>Pasar</P>
-        <canvas id="grafikBatang"></canvas>
+    <div class="col-sm-8" style="background-color:white; ">
+      <div style="width: 100%;margin: 0px auto;">
+        <P>Nilai Saham</P>
+        <canvas id="grafikBatang1"></canvas>
       </div>
     </div>
-    <div class="col-sm-6" style="background-color:white;">
-      <P>Persentase (%)</P>
-      <div style="width: 500px;margin: 0px auto;">
-        <canvas id="grafikBatang1"></canvas>
+    <div class="col" style="background-color:white;">
+      <div style="padding-top: 50px; padding-right: 4px;">
+        <h5>Hitung Selisih</h5>
+        <div class="input-group date">
+          <input placeholder="Pilih Tanggal" type="text" class="form-control datepicker">
+          <i class="fas fa-calendar-alt" style="padding-left: 5px;"></i>
+        </div>
+        <div class="input-group date" style="padding-top: 5px; padding-bottom: 10px;">
+          <input placeholder="Pilih Tanggal" type="text" class="form-control datepicker">
+          <i class="fas fa-calendar-alt" style="padding-left: 5px;"></i>
+        </div>
+        <h2 class="text-center" style="color: blue;">-54%</h2>
       </div>
     </div>
   </div>
@@ -193,22 +202,28 @@
 <div class="container content">
   <h4 style="padding-top: 12px">Selisih</h4>
   <div class="row">
-    <div class="col-sm-6" style="background: white;">
-      <div style="height: 200px;">
-        <div class="input-group date">
-          <input id="tgl" type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
-        </div>
+    <div class="col" style="background:white;">
+      <div style="height: 150px;">
       </div>
     </div>
-    <div class="col-sm-6" style="background: white;">
-
+    <div class="col" style="background: white;">
+      <P>Persentase (%)</P>
+      <div style="width: 500px;margin: 0px auto;">
+        <canvas id="grafikBatang"></canvas>
+      </div>
     </div>      
   </div>
 </div>
 
+
+
 <script type="text/javascript">
-  $('#tgl').datepicker({
-    format: 'yyyy-mm-dd',
+  $(function(){
+    $(".datepicker").datepicker({
+      format: 'yyyy-mm-dd',
+      autoclose: true,
+      todayHighlight: true,
+    });
   });
 </script>
 
@@ -303,9 +318,9 @@
   var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-      labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+      labels: ["2018","2018","2018","2019"],
       datasets: [{
-        label: '# of Votes',
+        label: '# Liabilitas',
         data: [12, 19, 3, 23, 2, 3],
         backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
