@@ -9,8 +9,12 @@
 		</script>
 	</head>
 	<body>
-		<h3>From Import</h3>
-		<hr>
+		<div class="col-lg-12">
+			<div class="row" style="padding: 10px">
+				<div class="col-sm-8" style="background-color: white"></div>
+				
+			</div>
+		</div>
 		
 	</body>
 </html>

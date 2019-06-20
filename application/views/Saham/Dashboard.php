@@ -66,13 +66,19 @@
     .sidenav a {font-size: 18px;}
   }
 
+  .btn{
+    float: right;
+  }
+  .btn:hover{
+    color: #0056b3;
+  }
+
 </style>
 </head>
 <body>
   <nav class="navbar navbar-expand-md">
     <div>
-      <button>
-        <a href="<?php echo base_url("index.php/admin/Dashbord/inputData");?>"><i class="fas fa-plus"></i> Input Data</a></button>
+      <button class="btn" onclick="window.location.href='<?=base_url()?>index.php/Dashboard/inputan'"><i class="fas fa-plus"></i>Input Data</button>
     </div>
   </nav>
   <hr>
