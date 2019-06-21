@@ -84,7 +84,7 @@
   <div class="logo" style="padding: 10px 10px 6px 16px;">
    <h2>SAHAM</h2>
  </div>
- <a href="http://localhost/Formulashm/Dashboard/DataEmiten"><i class="fas fa-archive"></i>  Data Emiten</a>
+ <a href="<?=base_url()?>index.php/Dashboard/DataEmiten"><i class="fas fa-archive"></i> Data Emiten</a>
  <a href="#"><i class="fas fa-plus"></i>  Input Data</a>
  <a href="http://localhost/Formulashm/index.php/Dashboard/DetailEmiten"><i class="fas fa-plus"></i> Detail Emiten</a>
 </div>
