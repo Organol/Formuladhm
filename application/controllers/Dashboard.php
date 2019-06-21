@@ -10,4 +10,8 @@ class Dashboard extends CI_Controller {
 	{
 		$this->load->view('Saham/DataEmitenView');
 	}
+	public function DetailEmiten()
+	{
+		$this->load->view('Saham/DetailEmitenView');
+	}
 }

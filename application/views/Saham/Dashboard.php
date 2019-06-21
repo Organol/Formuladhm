@@ -1,4 +1,3 @@
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,67 +10,9 @@
   <script src="assets/chart/Chart.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css">
+  
+  <link rel="stylesheet" type="text/css" href="assets/css/dashboard.css">
 
-
-  <style>
-  body{
-    background: #f7f6f3;
-  }
-  .sidenav {
-    height: 100%;
-    width: 180px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #1E7373;
-    overflow-x: hidden;
-    padding-top: 20px;
-  }
-
-  .sidenav a {
-    padding: 6px 8px 2px 12px;
-    text-decoration: none;
-    font-size: 16px;
-    color: #fff;
-    display: block;
-  }
-
-  .sidenav a:hover {
-    color: #F5C639;
-  }
-
-  .sidenav h2{
-    padding: 6px 8px 6px 16px;
-    color: white;
-  }
-
-  .main {
-    margin-left: 180px; /* Same as the width of the sidenav */
-    font-size: 28px; /* Increased text to enable scrolling */
-    padding: 0px 10px;
-  }
-
-  .navbar {
-    margin-left: 180px; /* Same as the width of the sidenav */
-    padding: 0px 10px;
-    height: 30px;
-    background: white;
-  }
-
-  .text{
-    padding-top: 0px;
-    font-size: 17px;
-    margin-top: 8px;
-  }
-
-  .container{
-    background: white;
-    margin-top: 20px;
-  }
-
-
-</style>
 </head>
 <body>
 <!--   <nav class="navbar navbar-expand-md">
@@ -90,14 +31,6 @@
 </div>
 
 <!-- Main section -->
-<style type="text/css">
-
-#addDataButton{
-  position:absolute;
-  top:20px;
-  right:5px;
-}
-</style> 
 <div class="main">
   <div class="col-lg-12" ">
     <div class="row" style="padding-bottom: 10px;">
@@ -157,12 +90,12 @@
   <div class="row" style="padding-bottom: 20px;">
     <div class="col-sm-6" style="background-color:white; ">
       <div style="width: 500px;margin: 0px auto;">
-        <P>Saham</P>
+        <P>Neraca</P>
         <canvas id="myChart"></canvas>
       </div>
     </div>
     <div class="col-sm-6" style="background-color:white;">
-      <P>Neraca</P>
+      <P>Profit Revenue</P>
       <div style="width: 500px;margin: 0px auto;">
         <canvas id="myChart1"></canvas>
       </div>
@@ -198,7 +131,6 @@
 
 
 <!-- Selisih section-->
-
 <div class="container content">
   <h4 style="padding-top: 12px">Selisih</h4>
   <div class="row">
@@ -216,178 +148,40 @@
 </div>
 
 
+<!-- Profit and Revenue-->
+<div class="container content">
+  <h4 style="padding-top: 12px">Profit and Revenue</h4>
+  <div class="row">
+    <div class="col" style="background:white;">
+      <p>Q1</p>
+      <div style="width: 500px;margin: 0px auto;">
+        <canvas id="Q1Chart"></canvas>
+      </div>
+    </div>
+    <div class="col" style="background: white;">
+      <p>Q2</p>
+      <div style="width: 500px;margin: 0px auto;">
+        <canvas id="Q2Chart"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col" style="background: white;">
+      <p>Q3</p>
+      <div style="width: 500px;margin: 0px auto;">
+        <canvas id="Q3Chart"></canvas>
+      </div>
+    </div>
+    <div class="col" style="background: white;">
+      <p>Tahunan</p>
+      <div style="width: 500px;margin: 0px auto;">
+        <canvas id="TahunanChart"></canvas>
+      </div>
+    </div>     
+  </div>
+</div>
 
-<script type="text/javascript">
-  $(function(){
-    $(".datepicker").datepicker({
-      format: 'yyyy-mm-dd',
-      autoclose: true,
-      todayHighlight: true,
-    });
-  });
-</script>
 
 </div>
 </div>
-
-
-
-<script>
-  new Chart(document.getElementById("grafikBatang"), {
-    type: 'bar',
-    data: {
-      labels: ["2016", "2017", "2018", "2019"],
-      datasets: [{
-        label: "Profit",
-        type: "line",
-        borderColor: "#8e5ea2",
-        data: [408,547,675,734],
-        fill: false
-      }, {
-        label: "Revenue",
-        type: "line",
-        borderColor: "#3e95cd",
-        data: [133,221,783,2478],
-        fill: false
-      }, {
-        label: "Profit",
-        type: "bar",
-        backgroundColor: "rgba(0,0,0,0.2)",
-        data: [408,547,675,734],
-      }, {
-        label: "Revenue",
-        type: "bar",
-        backgroundColor: "rgba(0,0,0,0.2)",
-        backgroundColorHover: "#3e95cd",
-        data: [133,221,783,2478]
-      }
-      ]
-    },
-    options: {
-      title: {
-        display: true,
-        text: 'Population growth (millions): Europe & Africa'
-      },
-      legend: { display: false }
-    }
-  });
-
-  var ctx = document.getElementById("grafikBatang1").getContext('2d');
-  var myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-      datasets: [{
-        label: '# Jumlah Survei',
-        data: [12, 19, 3, 5, 2, 3],
-        backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)',
-        'rgba(75, 192, 192, 0.2)',
-        'rgba(153, 102, 255, 0.2)',
-        'rgba(255, 159, 64, 0.2)'
-        ],
-        borderColor: [
-        'rgba(255,99,132,1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)',
-        'rgba(153, 102, 255, 1)',
-        'rgba(255, 159, 64, 1)'
-        ],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        yAxes: [{
-          ticks: {
-            beginAtZero:true
-          }
-        }]
-      }
-    }
-  });
-</script>
-
-
-
-<script>
-  var ctx = document.getElementById("myChart").getContext('2d');
-  var myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: ["2018","2018","2018","2019"],
-      datasets: [{
-        label: '# Liabilitas',
-        data: [12, 19, 3, 23, 2, 3],
-        backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)',
-        'rgba(75, 192, 192, 0.2)',
-        'rgba(153, 102, 255, 0.2)',
-        'rgba(255, 159, 64, 0.2)'
-        ],
-        borderColor: [
-        'rgba(255,99,132,1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)',
-        'rgba(153, 102, 255, 1)',
-        'rgba(255, 159, 64, 1)'
-        ],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        yAxes: [{
-          ticks: {
-            beginAtZero:true
-          }
-        }]
-      }
-    }
-  });
-
-  var ctxm = document.getElementById("myChart1").getContext('2d');
-  var myChart1 = new Chart(ctxm, {
-    type: 'line',
-    data: {
-      labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-      datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 23, 2, 3],
-        backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)',
-        'rgba(75, 192, 192, 0.2)',
-        'rgba(153, 102, 255, 0.2)',
-        'rgba(255, 159, 64, 0.2)'
-        ],
-        borderColor: [
-        'rgba(255,99,132,1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)',
-        'rgba(153, 102, 255, 1)',
-        'rgba(255, 159, 64, 1)'
-        ],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        yAxes: [{
-          ticks: {
-            beginAtZero:true
-          }
-        }]
-      }
-    }
-  });
-
-</script>
+<script type="text/javascript" src="assets/table.js"></script>

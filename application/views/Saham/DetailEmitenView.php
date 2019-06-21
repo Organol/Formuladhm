@@ -67,11 +67,10 @@
   }
 
 </style>
+
+
 </head>
 <body>
-  <nav class="navbar navbar-expand-md">
-  </nav>
-  <hr>
 </body>
 <div class="sidenav">
   <h2>SAHAM</h2>
@@ -80,68 +79,60 @@
 </div>
 <div class="main">
   <div class="col-lg-12" ">
-    <div class="row" style="padding-bottom: 10px;">
-      <div class="col-sm-6" style="background-color:white;">
-        <h3>BBNI</h3>
-        <P class="text">Bank Negara Indonesia tbk</P>
+    <div class="row" style="padding-bottom: 5px; padding-top: 5px;">
+      <div class="col-sm-6" style="background-color:white; height: 60px;">
+        <h3 style="margin-top: 10px;">Formula Saham</h3>
       </div>
       <div class="col-sm-6" style="background-color:white;">
-        <P style="text-align: right; padding-right: 20px;" class="text">Sektor: Finance</P>
       </div>
       <br>
     </div>
 
     <div class="row" >
-      <div class="col-sm-6" style="background-color:white;">
-        <div style="width: 800px;margin: 0px auto;">
-          <canvas id="myChart"></canvas>
+      <div class="col" style="background-color:#ff54;">
+        <div class="container content">
         </div>
       </div>
-      <div class="col-sm-6" style="background-color:white;">
-        <P class="text">Sektor: Finance</P>
-      </div>
-      
-    </div>
 
+      <div class="col-sm-4" style="background-color:white; margin-left: 12px;">
+       <div class="container content" style="background: white">
+        <p style="padding-top: 5px;">Persentase(%)</p>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">Kode</th>
+              <th scope="col">Nama Emiten</th>
+              <th scope="col">%</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>BBNI</td>
+              <td>Bank Negara Indonesia Tbk</td>
+              <td>-34%</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>BBNI</td>
+              <td>Bank Negara Indonesia Tbk</td>
+              <td>-34%</td>
+            </tr>
+             <tr>
+              <th scope="row">3</th>
+              <td>BBNI</td>
+              <td>Bank Negara Indonesia Tbk</td>
+              <td>-34%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
+
+
+</div>
 </div>
 
-<script>
-    var ctx = document.getElementById("myChart").getContext('2d');
-    var myChart = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-        datasets: [{
-          label: '# of Votes',
-          data: [12, 19, 3, 23, 2, 3],
-          backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)'
-          ],
-          borderColor: [
-          'rgba(255,99,132,1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)'
-          ],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero:true
-            }
-          }]
-        }
-      }
-    });
-  </script>
+
