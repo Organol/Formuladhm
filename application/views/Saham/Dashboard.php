@@ -25,8 +25,8 @@
   <div class="logo" style="padding: 10px 10px 6px 16px;">
    <h2>SAHAM</h2>
  </div>
- <a href="http://localhost/Formulashm/Dashboard/DataEmiten"><i class="fas fa-archive"></i>  Data Emiten</a>
- <a href="#"><i class="fas fa-plus"></i>  Input Data</a>
+ <a href="http://localhost/Formulashm/index.php/Dashboard/DataEmiten"><i class="fas fa-archive"></i>  Data Emiten</a>
+ <a href="http://localhost/Formulashm/index.php/Dashboard/FormInput"><i class="fas fa-plus"></i>  Input Data</a>
  <a href="http://localhost/Formulashm/index.php/Dashboard/DetailEmiten"><i class="fas fa-plus"></i> Detail Emiten</a>
 </div>
 
@@ -95,7 +95,7 @@
       </div>
     </div>
     <div class="col-sm-6" style="background-color:white;">
-      <P>Profit Revenue</P>
+      <P>Pasar</P>
       <div style="width: 500px;margin: 0px auto;">
         <canvas id="myChart1"></canvas>
       </div>

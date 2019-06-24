@@ -14,4 +14,8 @@ class Dashboard extends CI_Controller {
 	{
 		$this->load->view('Saham/DetailEmitenView');
 	}
+	public function FormInput()
+	{
+		$this->load->view('Saham/FormInputView');
+	}
 }
