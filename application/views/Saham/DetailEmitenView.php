@@ -9,6 +9,14 @@
   <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 
   <script src="assets/chart/Chart.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css">
+
 
   <style>
   body{
@@ -45,7 +53,7 @@
 
   .main {
     margin-left: 180px; /* Same as the width of the sidenav */
-    font-size: 28px; /* Increased text to enable scrolling */
+    font-size: 14px; /* Increased text to enable scrolling */
     padding: 0px 10px;
   }
 
@@ -67,11 +75,11 @@
   }
 
 </style>
+
+
 </head>
 <body>
-  <nav class="navbar navbar-expand-md">
-  </nav>
-  <hr>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
 </body>
 <div class="sidenav">
   <h2>SAHAM</h2>
@@ -80,68 +88,155 @@
 </div>
 <div class="main">
   <div class="col-lg-12" ">
-    <div class="row" style="padding-bottom: 10px;">
-      <div class="col-sm-6" style="background-color:white;">
-        <h3>BBNI</h3>
-        <P class="text">Bank Negara Indonesia tbk</P>
+    <div class="row" style="padding-bottom: 5px; padding-top: 5px;">
+      <div class="col-sm-6" style="background-color:white; height: 60px;">
+        <h3 style="margin-top: 10px;">Formula Saham</h3>
       </div>
       <div class="col-sm-6" style="background-color:white;">
-        <P style="text-align: right; padding-right: 20px;" class="text">Sektor: Finance</P>
       </div>
       <br>
     </div>
 
     <div class="row" >
-      <div class="col-sm-6" style="background-color:white;">
-        <div style="width: 800px;margin: 0px auto;">
-          <canvas id="myChart"></canvas>
+     <div class="col" style="background-color:white; ">
+       <div class="container content" style="background: white">
+        <p style="padding-top: 5px; padding-bottom: 20px; font-size: 28px; margin-bottom: -10px;">Hitung Persentase(%)</p>
+        <div class="input-group-addon">
+          <div class="input-group">
+            <span class="input-group-text" id="validationTooltipUsernamePrepend"><i class="fas fa-calendar"></i></span>
+            <input placeholder="Pilih Tanggal" type="text" class="form-control datepicker">
+          </div>
         </div>
-      </div>
-      <div class="col-sm-6" style="background-color:white;">
-        <P class="text">Sektor: Finance</P>
-      </div>
-      
+        <div class="input-group-addon" style="padding-bottom: 10px;">
+          <div class="input-group">
+            <span class="input-group-text" id="validationTooltipUsernamePrepend"><i class="fas fa-calendar"></i></span>
+            <input placeholder="Pilih Tanggal" type="text" class="form-control datepicker">
+          </div>
+        </div>
+        <table id="tabel-data" class="table table-striped table-bordered table-hover" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Kode</th>
+              <th>Nama Emiten</th>
+              <th>Sektor</th>
+              <th>%</th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+              <th>No</th>
+              <th>Kode</th>
+              <th>Nama Emiten</th>
+              <th>Sektor</th>
+              <th>%</th>
+            </tr>
+          </tfoot>
+          <tbody>
+           <tr>
+            <td>1</td>
+            <td>BBNI</td>
+            <td>Bank Negara Indonesia Tbk</td>
+            <td>Finance</td>
+            <td>-34%</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>BBNI</td>
+            <td>Bank Negara Indonesia Tbk</td>
+            <td>Finance</td>
+            <td>-34%</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>BBNI</td>
+            <td>Bank Negara Indonesia Tbk</td>
+            <td>Finance</td>
+            <td>-34%</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>BBNI</td>
+            <td>Bank Negara Indonesia Tbk</td>
+            <td>Finance</td>
+            <td>-34%</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>BBNI</td>
+            <td>Bank Negara Indonesia Tbk</td>
+            <td>Finance</td>
+            <td>-34%</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>BBNI</td>
+            <td>Bank Negara Indonesia Tbk</td>
+            <td>Finance</td>
+            <td>-34%</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>BBNI</td>
+            <td>Bank Negara Indonesia Tbk</td>
+            <td>Finance</td>
+            <td>-34%</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>BBNI</td>
+            <td>Bank Negara Indonesia Tbk</td>
+            <td>Finance</td>
+            <td>-34%</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>BBNI</td>
+            <td>Bank Negara Indonesia Tbk</td>
+            <td>Manufacture</td>
+            <td>-34%</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>BBNI</td>
+            <td>Bank Negara Indonesia Tbk</td>
+            <td>Finance</td>
+            <td>-34%</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>BBNI</td>
+            <td>Bank Negara Indonesia Tbk</td>
+            <td>Finance</td>
+            <td>-34%</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-
   </div>
 </div>
 
+
+</div>
+</div>
+
+
 <script>
-    var ctx = document.getElementById("myChart").getContext('2d');
-    var myChart = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-        datasets: [{
-          label: '# of Votes',
-          data: [12, 19, 3, 23, 2, 3],
-          backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)'
-          ],
-          borderColor: [
-          'rgba(255,99,132,1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)'
-          ],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero:true
-            }
-          }]
-        }
-      }
+  $(document).ready(function(){
+    $('#tabel-data').DataTable({
+      "dom": '<"top"f>rt<"bottom"lip><"clear">',
+    } );
+  });
+
+
+  //datapicker
+  $(function(){
+    $(".datepicker").datepicker({
+      format: 'yyyy-mm-dd',
+      autoclose: true,
+      todayHighlight: true,
     });
-  </script>
+  });
+</script>
+
+

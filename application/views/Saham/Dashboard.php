@@ -8,6 +8,7 @@
   <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 
+
   <script src="assets/chart/Chart.js"></script>
 
   <style>
@@ -74,6 +75,13 @@
   }
 
 </style>
+
+  <script src="assets/chart/Chart.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css">
+  
+  <link rel="stylesheet" type="text/css" href="assets/css/dashboard.css">
+
 </head>
 <body>
   <nav class="navbar navbar-expand-md">
@@ -84,10 +92,22 @@
   <hr>
 </body>
 <div class="sidenav">
+
   <h2>SAHAM</h2>
   <a href="#"><i class="fas fa-archive"></i> Data Emiten</a>
   <a href="#"><i class="fas fa-plus"></i> Input Data</a>
 </div>
+
+  <div class="logo" style="padding: 10px 10px 6px 16px;">
+   <h2>SAHAM</h2>
+ </div>
+ <a href="http://localhost/Formulashm/index.php/Dashboard/DataEmiten"><i class="fas fa-archive"></i>  Data Emiten</a>
+ <a href="http://localhost/Formulashm/index.php/Dashboard/FormInput"><i class="fas fa-plus"></i>  Input Data</a>
+ <a href="http://localhost/Formulashm/index.php/Dashboard/DetailEmiten"><i class="fas fa-plus"></i> Detail Emiten</a>
+</div>
+
+<!-- Main section -->
+
 <div class="main">
   <div class="col-lg-12" ">
     <div class="row" style="padding-bottom: 10px;">
@@ -95,11 +115,78 @@
         <h3>BBNI</h3>
         <P class="text">Bank Negara Indonesia tbk</P>
       </div>
+
       <div class="col-sm-6" style="background-color:white;">
         <P style="text-align: right; padding-right: 20px;" class="text">Sektor: Finance</P>
+
+      <div class="col-sm-6 text-center" style="background-color:white; padding-left: 12px;">
+        <h3>Sektor</h3>
+        <P style="font-size: 20px; color: blue;" class="text">Finance</P>
+      </div>
+      <div class="col" style="background-color:white; padding-left: 12px;">
+        <a href="http://localhost/Formulashm/index.php/Dashboard/InputDataForm">
+          <button  type="button" id="addDataButton" class="btn btn-info btn-sm">Add Data Emiten</button></a>
+        </div>
+        <br>
+      </div>
+
+      <div class="row">
+        <div class="col" style="background-color:white;">
+          <P class="text">Saham Hari Ini</P>
+          <div class="row">
+            <div class="col">
+             <p style="margin-top: -15px; padding-top: 0px;">Rp.</p>
+           </div>
+           <div class="col">
+             <p style="margin-top: -15px; padding-top: 0px;">1.200</p>
+           </div>
+         </div>
+       </div>
+       <div class="col" style="background-color:white;">
+        <P class="text">Kapitalisasi Pasar</P>
+        <div class="row">
+          <div class="col">
+           <p style="margin-top: -15px; padding-top: 0px;">Rp.</p>
+         </div>
+         <div class="col">
+           <p style="margin-top: -15px; padding-top: 0px;">284.397.000.000.000</p>
+         </div>
+       </div>
+     </div>
+     <div class="col" style="background-color:white;">
+      <P class="text">Saham Beredar</P>
+      <div class="row">
+        <div class="col">
+         <p style="margin-top: -15px; padding-top: 0px;">300.000.000</p>
+       </div>
+       <div class="col">
+         <p style="margin-top: -15px; font-size: 20px; padding-top: 0px; text-align: right;">lembar</p>
+       </div>
+     </div>
+   </div>
+ </div>
+
+ <div class="container content"">
+  <h4 style="padding-top: 12px;"></h4>
+  <div class="row" style="padding-bottom: 20px;">
+    <div class="col-sm-6" style="background-color:white; ">
+      <div style="width: 500px;margin: 0px auto;">
+        <P>Neraca</P>
+        <canvas id="myChart"></canvas>
+
       </div>
       <br>
     </div>
+
+    <div class="col-sm-6" style="background-color:white;">
+      <P>Pasar</P>
+      <div style="width: 500px;margin: 0px auto;">
+        <canvas id="myChart1"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
 
     <div class="row" >
       <div class="col-sm-6" style="background-color:white;">
@@ -107,14 +194,68 @@
           <canvas id="myChart"></canvas>
         </div>
       </div>
+
       <div class="col-sm-6" style="background-color:white;">
         <P class="text">Sektor: Finance</P>
+   </div>
+  </div>
+</div>
+
+
+<!-- Selisih section-->
+<div class="container content">
+  <h4 style="padding-top: 12px">Selisih</h4>
+  <div class="row">
+    <div class="col" style="background:white;">
+      <div style="height: 150px;">
       </div>
       
     </div>
-
+    <div class="col" style="background: white;">
+      <P>Persentase (%)</P>
+      <div style="width: 500px;margin: 0px auto;">
+        <canvas id="grafikBatang"></canvas>
+      </div>
+    </div>      
   </div>
 </div>
+
+
+<!-- Profit and Revenue-->
+<div class="container content">
+  <h4 style="padding-top: 12px">Profit and Revenue</h4>
+  <div class="row">
+    <div class="col" style="background:white;">
+      <p>Q1</p>
+      <div style="width: 500px;margin: 0px auto;">
+        <canvas id="Q1Chart"></canvas>
+      </div>
+    </div>
+    <div class="col" style="background: white;">
+      <p>Q2</p>
+      <div style="width: 500px;margin: 0px auto;">
+        <canvas id="Q2Chart"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col" style="background: white;">
+      <p>Q3</p>
+      <div style="width: 500px;margin: 0px auto;">
+        <canvas id="Q3Chart"></canvas>
+      </div>
+    </div>
+    <div class="col" style="background: white;">
+      <p>Tahunan</p>
+      <div style="width: 500px;margin: 0px auto;">
+        <canvas id="TahunanChart"></canvas>
+      </div>
+    </div>     
+  </div>
+</div>
+  </div>
+</div>
+
 
 <script>
     var ctx = document.getElementById("myChart").getContext('2d');
@@ -155,3 +296,6 @@
       }
     });
   </script>
+
+</div>
+<script type="text/javascript" src="assets/table.js"></script>
