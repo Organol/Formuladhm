@@ -19,4 +19,8 @@ class Dashboard extends CI_Controller {
 	{
 		$this->load->view('Saham/FormInputView');
 	}
+	public function Renewall()
+	{
+		$this->load->view('Saham/Renewall');
+	}
 }
