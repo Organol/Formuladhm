@@ -1,52 +1,5 @@
-//datapicker
-$(function(){
-  $(".datepicker").datepicker({
-    format: 'yyyy-mm-dd',
-    autoclose: true,
-    todayHighlight: true,
-  });
-});
 
 //Datachart
-new Chart(document.getElementById("grafikBatang"), {
-  type: 'bar',
-  data: {
-    labels: ["2016", "2017", "2018", "2019"],
-    datasets: [{
-      label: "Profit",
-      type: "line",
-      borderColor: "#8e5ea2",
-      data: [408,547,675,734],
-      fill: false
-    }, {
-      label: "Revenue",
-      type: "line",
-      borderColor: "#3e95cd",
-      data: [133,221,783,2478],
-      fill: false
-    }, {
-      label: "Profit",
-      type: "bar",
-      backgroundColor: "rgba(0,0,0,0.2)",
-      data: [408,547,675,734],
-    }, {
-      label: "Revenue",
-      type: "bar",
-      backgroundColor: "rgba(0,0,0,0.2)",
-      backgroundColorHover: "#3e95cd",
-      data: [133,221,783,2478]
-    }
-    ]
-  },
-  options: {
-    title: {
-      display: true,
-      text: 'Population growth (millions): Europe & Africa'
-    },
-    legend: { display: false }
-  }
-});
-
 var ctx = document.getElementById("grafikBatang1").getContext('2d');
 var myChart = new Chart(ctx, {
   type: 'line',
@@ -211,12 +164,12 @@ var myChart1 = new Chart(ctxm, {
 
 var ctxm = document.getElementById("Q1Chart").getContext('2d');
 var myChart1 = new Chart(ctxm, {
-  type: 'line',
+  type: 'bar',
   data: {
-   labels: ["2017","2018", "2019"],
+   labels: ["2018", "2019"],
    datasets: [{
     label: 'Q1',
-    data: [16,12, 18],
+    data: [16000000,12000000],
     backgroundColor: [
     'rgba(255, 99, 132, 0.2)',
     'rgba(54, 162, 235, 0.2)',
