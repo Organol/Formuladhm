@@ -95,7 +95,7 @@ class EmitemModel extends CI_Model {
      public function getDataTanggal($where,$start,$end){
         $date = array($start, $end);
         $this->db->select("*");
-        $this->db->from('datauaham');
+        $this->db->from('datasaham');
         $this->db->where_in('tanggal',$date);
         $this->db->where('kode',$where);
         $query = $this->db->get();
