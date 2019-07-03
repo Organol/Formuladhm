@@ -86,7 +86,6 @@
   <a href="http://localhost/Formulashm/index.php/Dashboard"><i class="fas fa-archive"></i> Data Emiten</a>
   <!-- <a href="#"><i class="fas fa-plus"></i> Input Data</a> -->
 </div>
-<? $this->load->view('Saham/menu');?>
 <div class="main">
   <div class="col-lg-12" ">
     <!-- <div class="row" style="padding-bottom: 5px; padding-top: 5px;">
